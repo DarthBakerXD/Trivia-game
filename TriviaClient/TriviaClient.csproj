@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5C613FB-6B01-4136-BB06-5094C636E0CA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TriviaClient</RootNamespace>
+    <AssemblyName>TriviaClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MessagePack, Version=1.7.3.7, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagePack.1.7.3.7\lib\net45\MessagePack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameQuestion.Designer.cs">
+      <DependentUpon>GameQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameResults.Designer.cs">
+      <DependentUpon>GameResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HighscoreViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HighscoreViewer.Designer.cs">
+      <DependentUpon>HighscoreViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IPPromptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IPPromptForm.Designer.cs">
+      <DependentUpon>IPPromptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSON Classes\PlayerResults.cs" />
+    <Compile Include="JSON Classes\Question.cs" />
+    <Compile Include="JSON Classes\Room.cs" />
+    <Compile Include="LobbyBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LobbyBrowser.Designer.cs">
+      <DependentUpon>LobbyBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LobbyDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LobbyDetailsForm.Designer.cs">
+      <DependentUpon>LobbyDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LobbyScreenAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LobbyScreenAdmin.Designer.cs">
+      <DependentUpon>LobbyScreenAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LobbyScreenRegular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LobbyScreenRegular.Designer.cs">
+      <DependentUpon>LobbyScreenRegular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSON Classes\Requests.cs" />
+    <Compile Include="JSON Classes\Responses.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginMenu.Designer.cs">
+      <DependentUpon>LoginMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyStats.Designer.cs">
+      <DependentUpon>MyStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignupForm.Designer.cs">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GameQuestion.resx">
+      <DependentUpon>GameQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameResults.resx">
+      <DependentUpon>GameResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HighscoreViewer.resx">
+      <DependentUpon>HighscoreViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IPPromptForm.resx">
+      <DependentUpon>IPPromptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LobbyBrowser.resx">
+      <DependentUpon>LobbyBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LobbyDetailsForm.resx">
+      <DependentUpon>LobbyDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LobbyScreenAdmin.resx">
+      <DependentUpon>LobbyScreenAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LobbyScreenRegular.resx">
+      <DependentUpon>LobbyScreenRegular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginMenu.resx">
+      <DependentUpon>LoginMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyStats.resx">
+      <DependentUpon>MyStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SignupForm.resx">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\MessagePackAnalyzer.1.7.3.7\analyzers\dotnet\cs\MessagePackAnalyzer.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
